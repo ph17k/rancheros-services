@@ -2,6 +2,7 @@ samba:
   image: dperson/samba
   restart: unless-stopped
   net: host
+  mem_limit: 512m
   volumes: 
     - /mnt/data:/mount
   environment: 
