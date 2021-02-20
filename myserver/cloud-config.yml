@@ -10,6 +10,7 @@ rancher:
     EXTRA_CMDLINE: /init
   services_include:
     https://raw.githubusercontent.com/ph17k/rancheros-services/main/services/busydash.yml: true
+    https://raw.githubusercontent.com/ph17k/rancheros-services/main/services/samba.yml: true
   state:
     dev: LABEL=RANCHER_STATE
     wait: true
