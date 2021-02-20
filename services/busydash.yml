@@ -1,0 +1,6 @@
+dashboard:
+  image: husseingalal/busydash
+  restart: unless-stopped
+  net: host
+  labels:
+    io.rancher.os.scope: system

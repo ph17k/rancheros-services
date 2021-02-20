@@ -1,0 +1,11 @@
+samba:
+  image: dperson/samba
+  restart: unless-stopped
+  net: host
+  volumes: 
+    - /mnt/data:/mount
+  environment: 
+    - PERMISSIONS="true"
+    - SHARE1="scan;/mount/scan;yes;no;yes"
+    - SHARE2="media;/mount/media;yes;no;yes"
+    - SHARE3="docs;/mount/docs;yes;no;yes"
