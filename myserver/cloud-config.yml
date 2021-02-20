@@ -1,0 +1,18 @@
+#cloud-config
+hostname: myserver
+mounts:
+- - /dev/sdb1
+  - /mnt/data
+  - ext4
+  - ""
+rancher:
+  environment:
+    EXTRA_CMDLINE: /init
+  state:
+    dev: LABEL=RANCHER_STATE
+    wait: true
+runcmd:
+- swapon -L RANCHER_SWAP
+ssh_authorized_keys:
+- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWg0RWBUQPt1/22xse0gtOyKpqg03NpSQURwnJxbEKar2wMEGfPmlamEhlirJJb7C9cDvL2WhXbLzy9SP7SiO5k7gsEyZNtHvrGd71OUPh6bAPdBGRDVQiEYRyATE7kLXLjnd+Kkv/jbCp3RGqE0tRvIMSBCVoF8uvcKqmtXxaZb+yAYCQdPhhxKRNN1CwGM0GrD/dnN4FBEES/4qFoQZn5hKOQpgNNDfI7MWj6g5CLNe+5lq2ljOdF0bucefgPN/zdfn+6fBwc506pCloVCDifTN9OMlhK/Jqm426CUluQwfuGtOM0v0YYXan/5VvN2iEFx6KM/JvJ2dXmfacI31L
+- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjed3m9ceXyYsd4yIQfnpnMqoTe9eordW2nSzWiTF92rVEVJAs8oT6aTKrSptOrSTeqeM8AQjJWK2QRBjcBYhK7cjouvbsNl52k+FDeZOBzAZNzP5B1MFxUfn1WwTK10MUwYkY6ab08dJsy/IJ0SsBO6OGU+SVzgoV7CXyWiKS3Apwj0beAyvlsF/Wi7jZl0It6Rlc6oPHOU2xLpO7IKxAzmfqRM+dQQNTh7YXtiSpdfvyRNMAy34g20O5cZSN/yVsZXkwU6GQUVbGSiocugNZ640otzXj51Mo0fSM5kC0ZFg2IkY+BybHd1tIXuVRnIGlr0G9UoDlVDZhz+V3i5on
