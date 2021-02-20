@@ -8,6 +8,8 @@ mounts:
 rancher:
   environment:
     EXTRA_CMDLINE: /init
+  services_include:
+    https://raw.githubusercontent.com/ph17k/rancheros-services/main/services/busydash.yml: true
   state:
     dev: LABEL=RANCHER_STATE
     wait: true
