@@ -2,9 +2,9 @@ samba:
   image: dperson/samba
   restart: unless-stopped
   net: host
-  mem_limit: '512m'
+  mem_limit: 512
   volumes: 
-    - /mnt/data:/mount
+    - /mnt/data:./mount
   environment: 
     - PERMISSIONS="true"
     - SHARE="scan;/mount/scan;yes;no;yes"
