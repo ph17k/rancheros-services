@@ -11,6 +11,7 @@ rancher:
   services_include:
     https://raw.githubusercontent.com/ph17k/rancheros-services/main/services/busydash.yml: true
     https://raw.githubusercontent.com/ph17k/rancheros-services/main/services/samba.yml: true
+    https://raw.githubusercontent.com/ph17k/rancheros-services/main/services/plex.yml: true
   state:
     dev: LABEL=RANCHER_STATE
     wait: true
