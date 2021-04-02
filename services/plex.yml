@@ -1,0 +1,11 @@
+plex:
+  image: plexinc/pms-docker
+  restart: unless-stopped
+  net: host
+  volumes: 
+    - plex-config:/config
+    - plex-temp:/transcode
+    - /mnt/data/media:/data
+  environment:
+    - TZ=Europe/Zurich
+    - PLEX_CLAIM
